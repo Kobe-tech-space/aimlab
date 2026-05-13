@@ -131,7 +131,7 @@ export function loadSettings() {
   }
 }
 
-export function saveSettings(settings) {
+export function saveSettings(settings: Record<string, any>) {
   localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
 }
 
@@ -144,7 +144,7 @@ export function loadStats() {
   }
 }
 
-export function saveStats(stats) {
+export function saveStats(stats: Record<string, any>) {
   localStorage.setItem(STATS_KEY, JSON.stringify(stats));
 }
 
@@ -152,7 +152,7 @@ export function saveStats(stats) {
 const HISTORY_KEY = 'aimlab_history';
 const MAX_HISTORY = 50;
 
-export function saveSessionResult(mode, score, accuracy) {
+export function saveSessionResult(mode: string, score: number, accuracy: number) {
   try {
     const raw = localStorage.getItem(HISTORY_KEY);
     const history = raw ? JSON.parse(raw) : {};
@@ -165,7 +165,7 @@ export function saveSessionResult(mode, score, accuracy) {
   } catch { /* ignore */ }
 }
 
-export function loadSessionHistory(mode) {
+export function loadSessionHistory(mode: string): Array<{ score: number; accuracy: number; date: number }> {
   try {
     const raw = localStorage.getItem(HISTORY_KEY);
     const history = raw ? JSON.parse(raw) : {};

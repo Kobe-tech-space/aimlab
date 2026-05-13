@@ -12,11 +12,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "allowImportingTsExtensions": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "allowImportingTsExtensions": true
   },
   "include": ["src/**/*.ts", "src/**/*.js"],
   "exclude": ["node_modules", "dist"]
